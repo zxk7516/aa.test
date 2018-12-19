@@ -145,5 +145,6 @@ return [
     */
 
     'attributes' => [],
+    'keep_word'  => '保留字',
 
 ];
