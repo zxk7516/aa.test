@@ -8,6 +8,11 @@ let Router = DefaultRouter;
 
 let routes = [
   {
+    "path": "/login",
+    "exact": true,
+    "component": require('../login.js').default
+  },
+  {
     "path": "/",
     "exact": true,
     "component": require('../index.js').default
