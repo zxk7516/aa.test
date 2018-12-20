@@ -25,7 +25,8 @@ let routes = [
   {
     "path": "/user",
     "exact": true,
-    "component": require('../user/index.js').default
+    "component": require('../user/index.js').default,
+    "routes": [require('../../routes/auth').default],
   },
   {
     "component": () => React.createElement(require('C:/Users/Administrator/AppData/Roaming/npm/node_modules/umi/node_modules/_umi-build-dev@1.2.7@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'pages', hasRoutesInConfig: false })

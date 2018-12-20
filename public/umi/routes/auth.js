@@ -1,8 +1,9 @@
 import Redirect from 'umi/redirect';
 
 export default (props) => {
-    const auth = Math.ceil(Math.random() * 100) % 2;
-
+    let auth = Math.ceil(Math.random() * 100) % 2;
+    aut = false;
+    console.log(auth);
     return (
         <div>
             {auth ? <Redirect to="/login" /> :
@@ -11,6 +12,5 @@ export default (props) => {
                     {props.children}
                 </div>}
         </div>
-    )
-        ;
+    );
 }
