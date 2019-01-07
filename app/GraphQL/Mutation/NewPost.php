@@ -22,7 +22,7 @@ class NewPost extends Mutation
 
     public function type()
     {
-        return GraphQL::type('Bit');
+        return GraphQL::type('Post');
     }
 
     public function args()

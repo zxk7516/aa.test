@@ -6,11 +6,11 @@ use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
-class PostType extends GraphQLType
+class BitType extends GraphQLType
 {
     protected $attributes = [
-        'name' => 'Post',
-        'description' => 'Article post'
+        'name' => 'Bit',
+        'description' => 'Code bit'
     ];
 
     public function fields()
@@ -18,28 +18,32 @@ class PostType extends GraphQLType
         return [
             'id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'The id of a post'
+                'description' => 'The id of a bit'
             ],
             'user' => [
                 'type' => Type::nonNull(GraphQL::type('User')),
-                'description' => 'The user that posted a post'
+                'description' => 'The user that posted a bit'
             ],
-            'title' => [
+            'snippet' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => '标题'
-            ],
-            'content' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => '内容'
+                'description' => 'The code bit'
             ],
             'created_at' => [
                 'type' => Type::string(),
-                'description' => 'Date a post was created'
+                'description' => 'Date a bit was created'
             ],
             'updated_at' => [
                 'type' => Type::string(),
-                'description' => 'Date a post was updated'
-            ]
+                'description' => 'Date a bit was updated'
+            ],
+            'replies' => [
+                'type' => Type::listOf(GraphQL::type('Reply')),
+                'description' => 'The replies to a bit'
+            ],
+            'likes_count' => [
+                'type' => Type::int(),
+                'description' => 'The number of likes on a bit'
+            ],
         ];
     }
 
@@ -51,5 +55,10 @@ class PostType extends GraphQLType
     protected function resolveUpdatedAtField($root, $args)
     {
         return (string) $root->updated_at;
+    }
+
+    protected function resolveLikesCountField($root, $args)
+    {
+        return $root->likes->count();
     }
 }

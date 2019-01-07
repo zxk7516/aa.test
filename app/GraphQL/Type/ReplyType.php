@@ -6,11 +6,11 @@ use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
-class UserType extends GraphQLType
+class ReplyType extends GraphQLType
 {
     protected $attributes = [
-        'name' => 'User',
-        'description' => 'A user'
+        'name' => 'Reply',
+        'description' => 'Reply to codebit'
     ];
 
     public function fields()
@@ -18,27 +18,27 @@ class UserType extends GraphQLType
         return [
             'id' => [
                 'type' => Type::nonNull(Type::int()),
-                'description' => 'The id of a user'
+                'description' => 'The id of a reply'
             ],
-            'name' => [
+            'user' => [
+                'type' => Type::nonNull(GraphQL::type('User')),
+                'description' => 'The user that posted a reply'
+            ],
+            'bit' => [
+                'type' => Type::nonNull(GraphQL::type('Bit')),
+                'description' => 'The bit that was replied to'
+            ],
+            'reply' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'The name of a user'
-            ],
-            'email' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => 'The email address of a user'
-            ],
-            'bits' => [
-                'type' => Type::listOf(GraphQL::type('Bit')),
-                'description' => 'The user bits'
+                'description' => 'The reply'
             ],
             'created_at' => [
                 'type' => Type::string(),
-                'description' => 'Date a was created'
+                'description' => 'Date a bit was created'
             ],
             'updated_at' => [
                 'type' => Type::string(),
-                'description' => 'Date a was updated'
+                'description' => 'Date a bit was updated'
             ],
         ];
     }

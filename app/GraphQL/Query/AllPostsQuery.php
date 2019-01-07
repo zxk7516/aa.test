@@ -29,15 +29,15 @@ class AllPostsQuery extends Query
     {
         $fields = $info->getFieldSelection();
 
-        $bits = Post::query();
+        $posts = Post::query();
 
         foreach ($fields as $field => $keys) {
             if ($field === 'user') {
-                $bits->with('user');
+                $posts->with('user');
             }
         }
 
-        return $bits->latest()->get();
+        return $posts->latest()->get();
     }
 
 }

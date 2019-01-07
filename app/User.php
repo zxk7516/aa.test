@@ -23,7 +23,10 @@ class User extends Authenticatable implements JWTSubject
     public function posts(){
         return $this->hasMany(Post::class,'user_id');
     }
-
+    public function bits()
+    {
+        return $this->hasMany(Bit::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

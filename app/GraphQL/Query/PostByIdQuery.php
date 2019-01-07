@@ -37,11 +37,11 @@ class PostByIdQuery extends Query
 
     public function resolve($root, $args)
     {
-        if (!$bit = Post::find($args['id'])) {
+        if (!$post = Post::find($args['id'])) {
             throw new \Exception('Resource not found');
         }
 
-        return $bit;
+        return $post;
     }
 
 

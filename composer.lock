@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "542fd5af45798be074ef72f96900acfe",
+    "content-hash": "e942d8f887f02e9afa8c0bd2a2e44cfa",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -736,16 +736,16 @@
         },
         {
             "name": "folklore/graphql",
-            "version": "v1.0.9",
+            "version": "v1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Folkloreatelier/laravel-graphql.git",
-                "reference": "6fc78487240bcc4eb526a11c65062e09ab84eb7f"
+                "reference": "2c00e91df18ecc827f2f4fac799d1fc50ff8abac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Folkloreatelier/laravel-graphql/zipball/6fc78487240bcc4eb526a11c65062e09ab84eb7f",
-                "reference": "6fc78487240bcc4eb526a11c65062e09ab84eb7f",
+                "url": "https://api.github.com/repos/Folkloreatelier/laravel-graphql/zipball/2c00e91df18ecc827f2f4fac799d1fc50ff8abac",
+                "reference": "2c00e91df18ecc827f2f4fac799d1fc50ff8abac",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -797,7 +797,7 @@
                 "laravel",
                 "react"
             ],
-            "time": "2017-01-30T17:23:22+00:00"
+            "time": "2016-10-17T13:34:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

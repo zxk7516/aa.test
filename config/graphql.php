@@ -168,7 +168,7 @@ return [
      */
     'types' => [
         'User' => \App\GraphQL\Type\UserType::class,
-        'Bit' => \App\GraphQL\Type\PostType::class,
+        'Post' => \App\GraphQL\Type\PostType::class,
     ],
     /*
      * This callable will receive all the Exception objects that are caught by GraphQL.
