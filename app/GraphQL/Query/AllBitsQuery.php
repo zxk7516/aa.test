@@ -39,6 +39,6 @@ class AllBitsQuery extends Query
             }
         }
 
-        return $bits->latest()->get();
+        return $bits->latest('id')->get();
     }
 }

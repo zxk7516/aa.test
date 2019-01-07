@@ -37,7 +37,7 @@ class AllPostsQuery extends Query
             }
         }
 
-        return $posts->latest()->get();
+        return $posts->latest('id')->get();
     }
 
 }
