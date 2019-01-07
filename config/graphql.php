@@ -50,7 +50,7 @@ return [
     /*
      * Any middleware for the 'graphql' route group
      */
-    'middleware' => [],
+    'middleware' => ['auth:api'],
     /**
      * Any middleware for a specific 'graphql' schema
      */

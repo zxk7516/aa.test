@@ -50,7 +50,8 @@ class NewPost extends Mutation
     public function resolve($root, $args)
     {
         $post = new Post();
-
+        $post->title = $args['title'];
+        $post->content = $args['content'];
         $post->user_id = auth('api')->user()->id;
         $post->save();
 
