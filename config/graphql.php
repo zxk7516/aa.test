@@ -112,13 +112,13 @@ return [
             'query' => [
                 'allBits' => \App\GraphQL\Query\AllBitsQuery::class,
                 'bitById' => \App\GraphQL\Query\BitByIdQuery::class,
-//                'allPosts' => \App\GraphQL\Query\AllPostsQuery::class,
-//                'postById' => \App\GraphQL\Query\PostByIdQuery::class,
+                'allPosts' => \App\GraphQL\Query\AllPostsQuery::class,
+                'postById' => \App\GraphQL\Query\PostByIdQuery::class,
             ],
             'mutation' => [
                 'signUp' => \App\GraphQL\Mutation\SignUpMutation::class,
                 'logIn' => \App\GraphQL\Mutation\LogInMutation::class,
-//                'newPost' => \App\GraphQL\Mutation\NewPost::class,
+                'newPost' => \App\GraphQL\Mutation\NewPost::class,
                 'newBit' => \App\GraphQL\Mutation\NewBitMutation::class,
                 'replyBit' => \App\GraphQL\Mutation\ReplyBitMutation::class,
                 'likeBit' => \App\GraphQL\Mutation\LikeBitMutation::class,
@@ -176,6 +176,7 @@ return [
         'User' => \App\GraphQL\Type\UserType::class,
         'Bit' => \App\GraphQL\Type\BitType::class,
         'Reply' => \App\GraphQL\Type\ReplyType::class,
+        'Post' => \App\GraphQL\Type\PostType::class,
     ],
     /*
      * This callable will receive all the Exception objects that are caught by GraphQL.

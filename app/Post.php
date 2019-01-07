@@ -9,7 +9,8 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    public function writer(){
+    public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
+
 }
