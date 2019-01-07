@@ -25,9 +25,28 @@ class AllPostsQuery extends Query
         return Type::listOf(GraphQL::type('Post'));
     }
 
+    public function args()
+    {
+        return [
+
+            'page' => [
+                'name' => 'page',
+                'type' => Type::getNullableType(Type::int()),
+                'rules' => []
+            ],
+            'pagesize' => [
+                'name' => 'pagesize',
+                'type' => Type::getNullableType(Type::int()),
+                'rules' => []
+            ],
+
+        ];
+    }
+
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
         $fields = $info->getFieldSelection();
+
 
         $posts = Post::query();
 
@@ -36,8 +55,7 @@ class AllPostsQuery extends Query
                 $posts->with('user');
             }
         }
-
-        return $posts->latest('id')->get();
+        return $posts->latest('id')->paginate($args['pagesize']??15,['*'],'page',$args['page']??1);
     }
 
 }
