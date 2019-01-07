@@ -9,7 +9,7 @@ use App\User;
 class SignUpMutation extends Mutation
 {
     protected $attributes = [
-        'name' => '注册'
+        'name' => 'signUp'
     ];
 
     public function type()

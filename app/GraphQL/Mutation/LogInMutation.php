@@ -8,7 +8,7 @@ use Folklore\GraphQL\Support\Mutation;
 class LogInMutation extends Mutation
 {
     protected $attributes = [
-        'name' => '登录'
+        'name' => 'logIn'
     ];
 
     public function type()
